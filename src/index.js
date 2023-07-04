@@ -6,7 +6,9 @@ import initialData from "./initial-data";
 import Column from "./column";
 
 const Container = styled.div`
+  margin-top: 200px;
   display: flex;
+  justify-content: center;
 `;
 
 class InnerList extends React.PureComponent {
@@ -133,10 +135,7 @@ class App extends React.Component {
           type="column"
         >
           {(provided) => (
-            <Container
-              {...provided.droppableProps}
-              innerRef={provided.innerRef}
-            >
+            <Container {...provided.droppableProps} ref={provided.innerRef}>
               {this.state.columnOrder.map((columnId, index) => {
                 const column = this.state.columns[columnId];
                 return (
